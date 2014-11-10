@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+		<fields name="attribs">
+			<fieldset name="gk-params" label="Open Graph Params (GavickPro)">
+				<field name="og:title" type="text" default="" label="Title" description="Title of the article"/>
+				<field name="og:type" type="text" default="article" label="Type" description="Type of the article content (usually just 'article')"/>
+				<field name="og:image" type="media" default="" label="Article thumbnail" description="Thumbnail image of the article" />
+				<field name="og:site_name" type="text" default="" label="Site name" description="Name of your website"/>
+				<field name="og:description" type="textarea" rows="5" cols="40" default="" label="Description" description="Additiona description for article" />
+			</fieldset>
+		</fields>
+</form>
