@@ -74,6 +74,7 @@
                     <position>topnav</position>
                     <position>cart</position>
                     <position>header</position>
+                    <position>search</position>
                     
                     <!-- STANDARD Module Positions -->
                     <position>sidebar</position>
