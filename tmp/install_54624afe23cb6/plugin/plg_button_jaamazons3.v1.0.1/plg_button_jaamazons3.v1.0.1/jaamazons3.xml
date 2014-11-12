@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="editors-xtd" method="upgrade">
+	<name>Button - JA Amazon S3</name>
+	<author>JoomlArt.com</author>
+	<creationDate>Aug 2013</creationDate>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<license>GNU/GPL V2 for PHP files. Read Terms of Service for details</license>
+	<copyright>Copyright 2005 - 2013 JoomlArt.com. All rights reserved.</copyright>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>1.0.1</version>
+	<description><![CDATA[Displays a button to make it possible to insert S3 images into an Article. Displays a popup allowing you to configure an image's properties and upload new image files to Amazon S3 server.]]></description>
+	<files>
+		<filename plugin="jaamazons3">jaamazons3.php</filename>
+		<filename>index.html</filename>	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_button_jaamazons3.ini</language>
+		<language tag="en-GB">en-GB.plg_button_jaamazons3.sys.ini</language>
+	</languages>
+</extension>

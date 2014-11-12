@@ -52,6 +52,7 @@ $tpl_page_suffix = $page_suffix_output != '' ? ' class="'.$page_suffix_output.'"
     <jdoc:include type="head" />
     <?php $this->layout->loadBlock('head'); ?>
 	<?php $this->layout->loadBlock('cookielaw'); ?>
+	
 </head>
 <body<?php echo $tpl_page_suffix; ?><?php if($this->browser->get("tablet") == true) echo ' data-tablet="true"'; ?><?php if($this->browser->get("mobile") == true) echo ' data-mobile="true"'; ?><?php $this->layout->generateLayoutWidths(); ?> data-zoom-size="<?php echo $this->API->get('gk_zoom_size', '150'); ?>">	
 	<?php
@@ -65,32 +66,49 @@ $tpl_page_suffix = $page_suffix_output != '' ? ' class="'.$page_suffix_output.'"
 	<?php endif; ?>
 	
     <header id="gkHeader"<?php if(!$this->API->modules('breadcrumb')) : ?> class="nobreadcrumb"<?php endif; ?>>
-    	<div id="gkHeaderTop">
+    	<div id="gkHeaderTop" >
+                
 	    	<div class="gkPage">
 				<?php if($this->API->modules('topnav')) : ?>
-				<div id="gkTopMenu">
+				<div id="gkTopMenu" >
 					<jdoc:include type="modules" name="topnav" style="<?php echo $this->module_styles['topnav']; ?>" />
 				</div>
 				<?php endif; ?>
-                 
+				
 				<?php if($this->API->modules('cart')) : ?>
-				<div id="gkCart">
+				<div id="gkCart" >
 					<span id="gkCartCounter"><?php echo JText::_('GK_TPL_LOADING'); ?></span><i class="gk-icon-cart-add"></i>
 				</div>
 				
 				<?php $this->layout->loadBlock('tools/cart'); ?>
 				<?php endif; ?>
-				
-                <?php if($this->API->modules('search')) : ?>
-                <i class="gk-icon-search" id="gkSearchBtn"></i>
+				<?php if($this->API->modules('search')) : ?>
+                <i class="gk-icon-search nodesktop" id="gkSearchBtn"></i>
                 <?php endif; ?>
+               
 			</div>
 		</div>	
 		
 		<div id="gkHeaderNav">
-			<div class="gkPage">	
+			<div class="gkPage">
+				
 				<?php $this->layout->loadBlock('logo'); ?>
+				
+                 <!--moved from topnav -->
+         		<?php if($this->API->modules('search')) : ?>
+                 <div id="gkSearch">
+                 	<jdoc:include type="modules" name="search" style="<?php echo $this->module_styles['search']; ?>" />
+                 </div>
+                 <?php endif; ?>
                  
+                 
+                <?php if($this->API->modules('searchbox')) : ?>
+                <div id="gkTopSearch">
+                <jdoc:include type="modules" name="searchbox" />
+                </div>
+                <?php endif; ?>
+                
+                 <!---end of moving from topnav-->
                  <?php if($this->API->get('show_menu', 1)) : ?>
                  <div id="gkMainMenu" <?php echo $this->API->get('menu_type', 'classic') == 'overlay' ? 'class="gkMenuOverlay"' : 'class="gkMenuClassic"'; ?>>
                          <?php
@@ -112,11 +130,8 @@ $tpl_page_suffix = $page_suffix_output != '' ? ' class="'.$page_suffix_output.'"
                  </div>
                  <?php endif; ?>
                  
-                 <?php if($this->API->modules('search')) : ?>
-                 <div id="gkSearch">
-                 	<jdoc:include type="modules" name="search" style="<?php echo $this->module_styles['search']; ?>" />
-                 </div>
-                 <?php endif; ?>
+                 
+                 
 	    	</div>
     	</div>
     	

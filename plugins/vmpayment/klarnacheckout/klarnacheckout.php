@@ -40,7 +40,7 @@ if (!class_exists ('Klarna')) {
 	require (JPATH_ROOT . DS . 'plugins' . DS . 'vmpayment' . DS . 'klarna'. DS . 'klarna' . DS . 'api' . DS . 'klarna.php');
 }
 class plgVmPaymentKlarnaCheckout extends vmPSPlugin {
-	const RELEASE = 'VM 2.6.12';
+	const RELEASE = 'VM 2.6.12.2';
 	protected $currency_code_3;
 	protected $currency_id;
 	protected $country_code_2;

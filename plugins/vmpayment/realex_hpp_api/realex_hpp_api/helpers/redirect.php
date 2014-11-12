@@ -4,7 +4,7 @@
  * Realex payment plugin
  *
  * @author Valerie Isaksen
- * @version $Id: redirect.php 8457 2014-10-15 18:17:11Z alatak $
+ * @version $Id: redirect.php 8552 2014-11-06 14:46:15Z Milbo $
  * @package VirtueMart
  * @subpackage payment
  * Copyright (C) 2004-2014 Virtuemart Team. All rights reserved.
@@ -72,14 +72,12 @@ class RealexHelperRealexRedirect extends RealexHelperRealex {
 			JFactory::getDocument()->addScriptDeclaration ('
 
 //<![CDATA[
-	jQuery(document).ready(function($) {
-	    jQuery(window).load(function(){
-			if(jQuery("#vmPaymentForm")) {
+jQuery(window).load(function(){
+            if(jQuery("#vmPaymentForm")) {
 				jQuery("#vmPaymentForm").vm2front("startVmLoading","'.vmText::_('VMPAYMENT_REALEX_HPP_API_REDIRECT_MESSAGE', true).'" );
 				jQuery("#vmPaymentForm").submit();
 			}
-		});
-	});
+    });
 //]]>
 ');
 			$html .= '<form action="' . $jump_url . '" method="post" name="vm_realex_form" id="vmPaymentForm" accept-charset="UTF-8">';
@@ -91,15 +89,14 @@ class RealexHelperRealexRedirect extends RealexHelperRealex {
 		}
 
 		if ($this->_method->debug) {
-
 			$html .= '<div style="background-color:red;color:white;padding:10px;">
 						<input type="submit"  value="The method is in debug mode. Click here to be redirected to Realex" />
 						</div>';
 			$this->debugLog($post_variables, 'sendPostRequest:', 'debug');
-
-		}
+		}else {
+            $html .= '<input type="submit"  value="' . vmText::_('VMPAYMENT_REALEX_HPP_API_REDIRECT_MESSAGE') . '" />';
+        }
 		$html .= '</form>';
-
 
 		return $html;
 	}

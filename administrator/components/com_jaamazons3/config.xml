@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset addpath="/administrator/components/com_jaamazons3/elements"
+		name="jaamazons3"
+		label="COM_JAAMAZONS3_GLOBAL_SETTING"
+		description="COM_JAAMAZONS3_GLOBAL_SETTING_DESC">
+		<!--<field name="allowed_extension" type="text" size="50" label="File types" default="js,css,jpg,gif,png,bmp,doc,pdf" description="Allowed Extensions to upload to Server (Separate by comma)." />-->
+		<field name="profile_path_depth" type="text" size="50" label="PROFILE_PATH_DEPTH" default="2" description="PROFILE_PATH_DEPTH_DESC" />
+		<field name="upload_secret_key" type="text" size="50" label="UPLOAD_SECRET_KEY" default="jaamazons3_upload" description="UPLOAD_SECRET_KEY_DESC" />
+		<!--<field name="upload_disabled_item" type="radio" default="0" label="Upload Disabled Item?" description="Upload Disabled Item Desc">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>-->
+		<field name="cron_mode" type="radio" default="off" label="CRON_MODE" description="CRON_MODE_DESC">
+			<option value="off">Disable</option>
+			<option value="pseudo">Pseudo Cron Job</option>
+			<option value="system">System Cron Job</option>
+		</field>
+		<!--<field name="cronjob_path" type="japaramhelper" subtype="cronpath" size="50" label="Cron job path" default="php" description="Path to cron job file, you can set cron job tab on cpnel for this file. Interval time is suggest a 5 minutes." />-->
+		<!--<field name="php_path" type="japaramhelper" subtype="phppath" size="50" label="PHP Excuteable Path" default="" description="Path to php desc" />-->
+		<!--<field name="mysql_path" type="japaramhelper" subtype="mysqlpath" size="50" label="MySQL Excuteable Path" default="" description="Path to mysql desc" />
+		<field name="mysqldump_path" type="japaramhelper" subtype="mysqldumppath" size="50" label="MySQL Dump Excuteable Path" default="" description="Path to mysqldump desc" />-->
+	</fieldset>
+</config>

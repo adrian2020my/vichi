@@ -97,6 +97,9 @@
 }
 
 /* limitation suffixes */
+.nodesktop{
+	display:block !important;	
+}
 .notablet {
 	display: block!important;
 }
@@ -186,13 +189,90 @@ fieldset {
 	#gkMainbody table {
 		width: 420px!important;
 	}
+	#gkHeaderTop {
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10001;
+}
+#gkCart {
+    float: right;
+    height: 38px;
+    line-height: 38px;
+    margin-right: 15px;
+    margin-top: 1px;
+}
+#gkSearch {
+    background: none repeat scroll 0% 0% #1B1D1F;
+    display: none;
+    height: 60px;
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 45px;
+    transition: all 0.3s ease-out 0s;
+    width: 100%;
+    z-index: 10001;
+}
+#gkLogo img {
+    display: block;
+    margin-top: 53px;
+    height: 52px;
+    width: auto;
+}
+li#hotsales, li#weeklydeals {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 55px;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.gkTabsWrap.vertical ol, .gkTabsWrap.horizontal > ol {
+    min-height: 40px;
+    margin: 0px !important;
+    padding: 0px !important;
+    height: 100%;
+}
 }
 
 @media only screen and (max-width: 440px) {
 	#gkMainbody table {
 		width: 260px!important;
 	}
+
 }
+
+@media only screen and (max-width: 352px) {
+	
+#gkMobileMenu i {
+    color: #050404;
+    height: 44px;
+    padding: 0px !important;
+    position: relative;
+    left: -20px;
+    text-align: center;
+    width: 44px;
+    top: 43px;
+}
+#gkMobileMenu select {
+width: 44px;
+height: 44px;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+filter: alpha(opacity=0);
+opacity: 0;
+position: absolute; 
+left: -20px;
+top: 43px;
+
+}
+
+}
+
+
+
+
 
 /* top/bottom modules */
 .box.gkmod-1,

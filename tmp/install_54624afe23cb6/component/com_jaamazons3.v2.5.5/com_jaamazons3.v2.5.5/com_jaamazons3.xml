@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: com_jaamazons3.xml 2010-12-10 11:42:18Z joomlart $ -->
+<extension type="component" version="2.5" method="upgrade">
+  <name>com_jaamazons3</name>
+  <creationDate>16 Sept 2013</creationDate>
+  <copyright>Copyright (C), J.O.O.M Solutions Co., Ltd. All Rights Reserved.</copyright>
+  <license>license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+  <author>JoomlArt</author>
+  <authorEmail>webmaster@joomlart.com</authorEmail>
+  <authorUrl>http://www.joomlart.com</authorUrl>
+  <version>2.5.5</version>
+  <updateservers>
+	    <server type="collection">http://update.joomlart.com/service/tracking/list.xml</server>
+	</updateservers>
+  <description>JA Amazon S3 (Simple Storage Service) Component enables you to use cloud computing for Joomla 2.5 and Joomla 3.0. The JA Amazon S3 Plugin is automatically installed and enabled.</description>
+  <files folder="site">
+    <filename>index.html</filename>
+    <folder>packages</folder>
+  </files>	
+  <administration>
+    <menu link="option=com_jaamazons3" img="components/com_jaamazons3/assets/images/joomlart.png">COM_JAAMAZONS3</menu>
+    <files folder="admin">
+      <filename>index.html</filename>
+      <filename>config.xml</filename>
+      <filename>jaamazons3.php</filename>
+      <filename>controller.php</filename>
+      <filename>constants.php</filename>
+      <filename>cron.php</filename>
+      <!--<filename>upload.php</filename>-->
+      <folder>assets</folder>
+      <folder>controllers</folder>
+      <folder>elements</folder>
+      <folder>helpers</folder>
+      <folder>lib</folder>
+      <folder>models</folder>
+      <folder>tables</folder>
+      <folder>views</folder>
+      <folder>installer</folder>
+    </files>
+    <languages folder="admin/installer/language/admin">
+      <language tag="en-GB">en-GB.com_jaamazons3.ini</language>
+      <language tag="en-GB">en-GB.com_jaamazons3.sys.ini</language>
+    </languages>
+  </administration>
+  <scriptfile>script.jaamazons3.php</scriptfile>
+  <uninstallfile>script.jaamazons3.php</uninstallfile>
+  <install>
+    <sql folder="admin">
+      <file driver="mysql" charset="utf8">installer/sql/install.jaamazons3.sql</file>
+    </sql>
+  </install>
+  <uninstall>
+    <sql folder="admin">
+      <file driver="mysql" charset="utf8">installer/sql/uninstall.jaamazons3.sql</file>
+    </sql>
+  </uninstall>
+  
+  <!--DEFINITIONS FOR EXTENDED EXTENSIONS OF THIS PACKAGE-->
+  <package_elements>
+    <plugins>
+      <plugin plugin="plg_jaamazons3" group="system" />
+      <plugin plugin="jaamazons3" group="editors-xtd" />
+    </plugins>
+  </package_elements>
+  
+  
+  <!--DEFINITIONS FOR COMPONENT JA EXTENSION MANAGER-->
+  <jaupdater>
+    <tables>
+      <table>#__jaamazons3_account</table>
+      <table>#__jaamazons3_bucket</table>
+      <table>#__jaamazons3_disabled</table>
+      <table>#__jaamazons3_file</table>
+      <table>#__jaamazons3_profile</table>
+    </tables>
+    <versions folder="admin">
+      <version version="2.5.1">
+        <changelogUrl>http://pm.joomlart.com/browse/JAECCOMAMAZONJIVI?report=com.atlassian.jira.plugin.system.project:changelog-panel</changelogUrl>
+      </version>
+      <version version="2.5.0">
+        <changelogUrl>http://pm.joomlart.com/browse/JAECCOMAMAZONJIVI?report=com.atlassian.jira.plugin.system.project:changelog-panel</changelogUrl>
+      </version>
+      <version version="1.0.2">
+        <changelogUrl>http://pm.joomlart.com/browse/JAECCOMAMAZONJIVI?report=com.atlassian.jira.plugin.system.project:changelog-panel</changelogUrl>
+      </version>
+      <version version="1.0.1">
+        <changelogUrl>http://pm.joomlart.com/browse/JAECCOMAMAZONJIVI?report=com.atlassian.jira.plugin.system.project:changelog-panel</changelogUrl>
+      </version>
+      <version version="1.0.0">
+        <changelogUrl>http://pm.joomlart.com/browse/JAECCOMAMAZONJIVI?report=com.atlassian.jira.plugin.system.project:changelog-panel</changelogUrl>
+      </version>
+    </versions>
+  </jaupdater>
+</extension>

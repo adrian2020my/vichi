@@ -21,7 +21,7 @@ class JConfig {
 	public $secret = 'qg60lXYS4VCUfJux';
 	public $gzip = '0';
 	public $error_reporting = 'default';
-	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&amp;keyref=Help{major}{minor}:{keyref}';
+	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
 	public $ftp_host = '127.0.0.1';
 	public $ftp_port = '21';
 	public $ftp_user = '';
@@ -39,7 +39,7 @@ class JConfig {
 	public $smtphost = 'localhost';
 	public $smtpsecure = 'none';
 	public $smtpport = '25';
-	public $caching = '0';
+	public $caching = '1';
 	public $cache_handler = 'file';
 	public $cachetime = '15';
 	public $MetaDesc = 'VirtueMart works with Joomla! - the dynamic portal engine and content management system';
@@ -55,7 +55,13 @@ class JConfig {
 	public $feed_limit = '10';
 	public $log_path = '/Applications/MAMP/htdocs/vichi-nosampledata/logs';
 	public $tmp_path = '/Applications/MAMP/htdocs/vichi-nosampledata/tmp';
-	public $lifetime = '60';
+	public $lifetime = '600';
 	public $session_handler = 'database';
 	public $asset_id = '1';
+	public $MetaRights = '';
+	public $sitename_pagetitles = '0';
+	public $force_ssl = '0';
+	public $feed_email = 'author';
+	public $cookie_domain = '';
+	public $cookie_path = '';
 }

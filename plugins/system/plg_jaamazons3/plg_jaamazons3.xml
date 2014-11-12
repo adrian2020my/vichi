@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>System - JA Amazon S3</name>
+	<author>JoomlArt.com</author>
+	<creationDate>16 Sep 2013</creationDate>
+	<authorEmail>webmaster@joomlart.com</authorEmail>
+	<license>GNU/GPL V2 for PHP files. Read Terms of Service for details</license>
+	<copyright>Copyright 2005 - 2012 JoomlArt.com. All rights reserved.</copyright>
+	<authorUrl>www.joomlart.com</authorUrl>
+	<version>2.5.2</version>
+	<description><![CDATA[
+	
+		<h1>JA Amazon S3 Plugin for Joomla 2.5 and Joomla 3.x</h1>
+		<div style='font-weight: normal'>
+		<p><span style='color: #ff6600;'><strong>Features:</strong></span>
+		This plugin allows your site to use the resources of the Amazon S3 Cloud service. Please enable it to use JA Amazon S3 component.</p>
+		
+		<strong><span style='color: #ff0000;'>Usage Instructions:</span></strong><br />
+		<ul>
+		<li>Enable the plugin in the plugin manager. Update the basic settings. Default settings should work for most of the users.</li>
+		<li>Proceed to JA Amazon S3 Component settings and set up the component.</li>
+		<li>Disabling this plugin will disable the action of the component</li>
+		</ul>
+		<strong><span style='color: #ff0000;'>Upgrade Methods:</span><br /></strong>
+		<ul>
+		  <li>You can install new version directly over this version. Uninstallation is not required. </li>
+		  </ul>
+		<span style='color: #008000;'><strong>Links:</strong></span><br />
+		<ul>
+		<li><a target="_blank" href="http://www.joomlart.com/forums/showthread.php?48496">General Userguide</a></li>
+		 <li><a target='_blank' href='http://update.joomlart.com/'>Updates &amp; Versions</a></li>
+		 <li><a target='_blank' href='http://www.joomlart.com/forums/forumdisplay.php?242'>JA Amazon S3 Forum</a></li>
+		</ul>
+		<br />
+		<p>Copyright 2004 - 2012 <a href='http://www.joomlart.com/' title='Visit Joomlart.com!'>JoomlArt.com</a>.</p>
+		</div>
+		]]></description>
+	<files>
+		<filename plugin="plg_jaamazons3">plg_jaamazons3.php</filename>
+		<folder>plg_jaamazons3/</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_plg_jaamazons3.ini</language>
+	</languages>
+	<config>
+	<fields name="params" addpath="/plugins/system/plg_jaamazons3/elements">
+	  <fieldset name="basic">
+		<field name="enabled" type="list" default="both" label="S3_ENABLED" description="S3_ENABLED_DESC">
+			<option value="both">JENABLED</option>
+			<option value="https">S3_ENABLED_FOR_SSL</option>
+			<option value="http">S3_ENABLED_FOR_NON_SSL</option>
+		</field>
+		<field name="protocol" type="radio" default="http" label="S3_PROTOCOL" description="S3_PROTOCOL_DESC">
+			<option value="http">HTTP</option>
+			<option value="https">HTTPS</option>
+		</field>
+		<field name="apply_admin" type="radio" default="0" label="APPLY_TO_ADMIN" description="APPLY_TO_ADMIN_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+	  </fieldset>
+	</fields>
+	</config>
+</extension>

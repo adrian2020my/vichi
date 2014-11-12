@@ -177,14 +177,12 @@ class PaypalHelperPayPalStd extends PaypalHelperPaypal {
 			JFactory::getDocument()->addScriptDeclaration ('
 
 //<![CDATA[
-	jQuery(document).ready(function($) {
-	    jQuery(window).load(function(){
-			if(jQuery("#vmPaymentForm")) {
+jQuery(window).load(function(){
+            if(jQuery("#vmPaymentForm")) {
 				jQuery("#vmPaymentForm").vm2front("startVmLoading","'.vmText::_('VMPAYMENT_PAYPAL_REDIRECT_MESSAGE', true).'" );
 				jQuery("#vmPaymentForm").submit();
 			}
-		});
-	});
+    });
 //]]>
 ');
 
@@ -202,11 +200,13 @@ class PaypalHelperPayPalStd extends PaypalHelperPaypal {
 						</div>';
 			$this->debugLog($post_variables, 'PayPal request:', 'debug');
 
-		}
+		} else {
+            $html .= '<input type="submit"  value="' . vmText::_('VMPAYMENT_PAYPAL_REDIRECT_MESSAGE') . '" />';
+
+        }
 		$html .= '</form>';
 
-		return $html;
-	}
+		return $html;	}
 
 	// todo check the paypal langauge: can it be sent. Atm sent in the country lanaguge
 

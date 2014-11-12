@@ -7,7 +7,7 @@
  * @version $Id$
  * @package VirtueMart
  * @subpackage payment
- * @copyright Copyright (c) 2004 - October 24 2014 VirtueMart Team. All rights reserved.
+ * @copyright Copyright (c) 2004 - November 10 2014 VirtueMart Team. All rights reserved.
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
  * VirtueMart is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -400,14 +400,12 @@ jQuery().ready(function($) {
 			JFactory::getDocument()->addScriptDeclaration ('
 
 //<![CDATA[
-	jQuery(document).ready(function($) {
-	    jQuery(window).load(function(){
-			if(jQuery("#vmPaymentForm")) {
+jQuery(window).load(function(){
+            if(jQuery("#vmPaymentForm")) {
 				jQuery("#vmPaymentForm").vm2front("startVmLoading","'.vmText::_('VMPAYMENT_PAYBOX_REDIRECT_MESSAGE', true).'" );
 				jQuery("#vmPaymentForm").submit();
 			}
-		});
-	});
+    });
 //]]>
 ');
 
@@ -426,7 +424,10 @@ jQuery().ready(function($) {
 						</div>';
 			$this->plugin->debugLog($post_variables, 'sendPostRequest:', 'debug');
 
-		}
+		}  else {
+            $html .= '<input type="submit"  value="' . vmText::_('VMPAYMENT_PAYBOX_REDIRECT_MESSAGE') . '" />';
+
+        }
 		$html .= '</form>';
 
 		return $html;

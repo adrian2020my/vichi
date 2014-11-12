@@ -117,6 +117,9 @@
                     <position>tab8</position>
                     <position>tab9</position>
                     <position>tab10</position>
+                    
+                    <!--CUSTOMISED Module Positions -->
+                    <position>searchbox</position>
           </positions>
           <languages folder="language">
                     <language tag="en-GB">en-GB.tpl_gk_storefront.ini</language>
@@ -232,7 +235,7 @@
                                         </field>
                                         <field name="mootools_for_pages" type="mootoolsoverride" label="TPL_GK_LANG_MOOTOOLS_FOR_PAGES" description="TPL_GK_LANG_MOOTOOLS_FOR_PAGES_DESC" />
                                         <field name="suffix_override" type="suffixoverride" label="TPL_GK_LANG_SUFFIXES_FOR_PAGES" description="TPL_GK_LANG_SUFFIXES_FOR_PAGES_DESC" />
-                                        <field name="module_override" type="moduleoverride" label="TPL_GK_LANG_MODULE_STYLES_OVERRIDE" description="TPL_GK_LANG_MODULE_STYLES_OVERRIDE_DESC" module_positions="breadcrumb,usermenu,header,footer_nav,login,cart,search,sidebar,mainbody,mainbody_top,mainbody_bottom,top1,top2,bottom1,bottom2,bottom3,bottom4,bottom5,menu1,menu2,menu3,menu4,menu5,menu6,menu7,menu8,menu9,menu10,tab1,tab2,tab3,tab4,tab5,tab6,tab7,tab8,tab9,tab10" module_styles="gk_style,xhtml,none,table,horz,rounded,outline" />
+                                        <field name="module_override" type="moduleoverride" label="TPL_GK_LANG_MODULE_STYLES_OVERRIDE" description="TPL_GK_LANG_MODULE_STYLES_OVERRIDE_DESC" module_positions="breadcrumb,usermenu,header,footer_nav,login,cart,search,sidebar,mainbody,mainbody_top,mainbody_bottom,top1,top2,bottom1,bottom2,bottom3,bottom4,bottom5,menu1,menu2,menu3,menu4,menu5,menu6,menu7,menu8,menu9,menu10,tab1,tab2,tab3,tab4,tab5,tab6,tab7,tab8,tab9,tab10,searchbox" module_styles="gk_style,xhtml,none,table,horz,rounded,outline" />
                               </fieldset>
                               
                               <!-- Menu settings -->

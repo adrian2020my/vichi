@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Text
  *
  * @package         NoNumber Framework
- * @version         14.10.3
+ * @version         14.10.7
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -135,7 +135,7 @@ class NNText
 			return '<' . $tags . $attribs . '>';
 		}
 
-		return '<(?:\/' . $tags . '|' . $tags . $attribs . ')>';
+		return '<(?:\/' . $tags . '|' . $tags . $attribs . ')(?:\s|&nbsp;|&\#160;)*>';
 	}
 
 	public static function toArray($string, $separator = '')

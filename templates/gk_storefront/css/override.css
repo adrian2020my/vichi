@@ -9,3 +9,214 @@
 */
 
 /* Here you can include your override CSS styles */
+/* NOt yet finalised*/
+
+
+
+
+/*Tabs under Featured Section*/
+div#gk-tabs-103 ol.gkTabsNav span {
+padding-top:10px;	
+}
+
+.gkTabsWrap.vertical ol, .gkTabsWrap.horizontal > ol {
+min-height: 40px;
+margin: 0!important;
+padding: 0!important;
+height: 65px;
+}
+
+li#hotsales, li#weeklydeals {
+height: 65px;
+width:501px;
+margin-left:auto;
+margin-right:auto;
+float:none;
+padding: 13px 55px 0px 55px!important;	
+}
+
+/*Remove animation when select tab under New*/
+.gkTabsWrap ol li.active {
+margin: 0 ;
+}
+
+ol.gkTabsNav{
+	
+box-sizing:border-box;
+}
+/* remove bottom border for tab under New */
+.gkTabsWrap.vertical ol, .gkTabsWrap.horizontal > ol {
+background: -moz-linear-gradient(top, #fbfbfb 0%, #f8f8f8 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fbfbfb), color-stop(100%, #f8f8f8));
+background: -webkit-linear-gradient(top, #fbfbfb 0%, #f8f8f8 100%);
+background: -o-linear-gradient(top, #fbfbfb 0%, #f8f8f8 100%);
+background: -ms-linear-gradient(top, #fbfbfb 0%, #f8f8f8 100%);
+background: linear-gradient(top, #fbfbfb 0%, #f8f8f8 100%);
+border-bottom: 0;
+}
+
+/* fix Remember Me and checkbox position*/
+#form-login-remember {
+margin: 44px 0 3px 0;
+}
+
+/*set a fixed padding for search*/
+div.search{
+padding: 0 43px;	
+}
+	
+/* Adjust resizing animation of search box*/
+.search textarea, input[type="text"], input[type="password"], input[type="url"], input[type="email"]{
+-webkit-transition: size 3s ease-out;
+-moz-transition: size 3s ease-out;
+-ms-transition: size 3s ease-out;
+transition: size 3s ease-out;
+transition-property: size;
+transition-duration: 0.4s;
+transition-timing-function: ease-out;
+transition-delay: initial;
+}
+
+/* reduce height of topnavigation*/
+#gkHeaderTop {
+height: 0px;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 10001;
+}
+/* Adjust position of cart*/
+#gkCart {
+float: right;
+height: 38px;
+line-height: 38px;
+margin-right: 15px;
+margin-top: 11px;
+}
+
+/* adjust position of logo*/
+#gkLogo img {
+display: block;
+margin-top: 10px;
+height: 90px;
+width: auto;
+}
+
+/* adjust margin of main menu's items*/
+.gkMenu > ul > li {
+clear: none!important;
+display: inline-block;
+font-size: 13px;
+font-weight: 400;
+height: 63px;
+line-height: 63px;
+text-transform: uppercase;
+width: auto;
+margin: 0 10px;
+}
+
+.gkMenu > ul > li > a {
+-webkit-transition: all 3s ease-out;
+-moz-transition: all 3s ease-out;
+-ms-transition: all 3s ease-out;
+transition: border-style 3s ease-out;
+transition-property: border-style;
+transition-duration: 0.4s;
+transition-timing-function: ease-out;
+transition-delay: initial;
+}
+
+.gkMenu a:hover, .gkMenu a:active, .gkMenu a:focus, .gkMenu li.active > a {
+color: #cba133;
+border-style: solid hidden;
+border-width: 2px;
+padding:15px;
+border-color:#cba133;
+}
+
+.gkMenu > ul > li > a {
+color: #000000;
+display: block;
+height: 0;
+line-height: 0;
+padding: 0 15px;
+position: relative;
+}
+
+.gkMenu > ul > li.active > a {
+color: #cba133;
+border-style: solid hidden;
+border-width: 2px;
+padding:15px;
+border-color:#cba133;
+}
+
+#gkHeaderNav {
+background: #FFFFFF;
+position: fixed;
+-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+top: -2px;
+width: 100%;
+z-index: 10000;
+height: 111px;
+}
+
+#gkMainMenu {
+float: right;
+padding: 10px;
+margin-top: 8px;
+}
+
+
+/* not yet finalised ends here */
+
+#gkTopSearch {
+float: right;
+margin-right: 121px;
+margin-top: 10px;
+}
+
+button, .button, input.button, span.button, button.button, div.button, input[type="submit"], input[type="button"], .pagenav-prev a, .pagenav-next a, .readon, #gkMainbody .itemReadMore, #gkMainbody .readmore > a, .button.invert:active, .button.invert:focus, .button.invert:hover, .gkShowCart a {
+-webkit-appearance: none;
+background: #eee;
+border: 1px solid #eee;
+color: #1b1d1f!important;
+cursor: pointer;
+display: block;
+float: right !important;
+font-size: 12px;
+font-weight: bold;
+height: 38px;
+line-height: 39px;
+margin: 0 5px 2px 2px;
+padding: 0 24px;
+text-align: center;
+text-transform: uppercase;
+-webkit-transition: all .3s ease-out;
+-moz-transition: all .3s ease-out;
+-o-transition: all .3s ease-out;
+transition: all .3s ease-out;
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="url"], input[type="email"] {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+-o-box-sizing: border-box;
+box-sizing: border-box;
+background: #fff;
+border-color: #bcbcbc #dadada #e5e5e5;
+border-style: solid;
+border-width: 1px;
+color: #777;
+font-family: Arial, sans-serif;
+padding: 10px 12px !important;
+max-width: 100%!important;
+float: left;
+
+}
+.nodesktop{
+	display:none !important;	
+}

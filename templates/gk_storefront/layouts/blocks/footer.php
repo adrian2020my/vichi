@@ -5,6 +5,13 @@ defined('_JEXEC') or die;
 
 ?>
 
+<?php function auto_copyright($year = 'auto'){ ?>
+   <?php if(intval($year) == 'auto'){ $year = date('Y'); } ?>
+   <?php if(intval($year) == date('Y')){ echo intval($year); } ?>
+   <?php if(intval($year) < date('Y')){ echo intval($year) . ' - ' . date('Y'); } ?>
+   <?php if(intval($year) > date('Y')){ echo date('Y'); } ?>
+<?php } ?>
+
 <footer id="gkFooter">
 	<div class="gkPage">
 		<?php if($this->API->modules('footer_nav')) : ?>
@@ -16,7 +23,7 @@ defined('_JEXEC') or die;
 		<?php if($this->API->get('copyrights', '') !== '') : ?>
 		<p id="gkCopyrights"><?php echo $this->API->get('copyrights', ''); ?></p>
 		<?php else : ?>
-		<p id="gkCopyrights">Template Design &copy; <a href="//www.gavick.com" rel="nofollow" title="Joomla Templates">Joomla Templates</a> GavickPro. All rights reserved.</p>
+		<p id="gkCopyrights">Copyright &copy; <?php auto_copyright('2012') ?> VICHI Enterprise and Web Design by<a href="//www.weeclicks.com.my" rel="nofollow" title="Weeclicks Network Sdn Bhd"> Weeclicks</a>.</p>
 		<?php endif; ?>
 		
 		<?php if($this->API->get('stylearea', '0') == '1') : ?>

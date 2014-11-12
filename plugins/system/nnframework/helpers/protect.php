@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Protect
  *
  * @package         NoNumber Framework
- * @version         14.10.3
+ * @version         14.10.7
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -168,10 +168,11 @@ class NNProtect
 		{
 			return;
 		}
+
 		self::protectByRegex(
 			$string,
 			'#(?:(?:'
-			. '(?:<' . 'input\s[^>]*type\s*=\s*(?:\'|")(?:text|email)(?:\'|")[^>]*>)'
+			. '(?:<' . 'input\s[^>]*type\s*=\s*(?:\'|")(?:text|email|hidden)(?:\'|")[^>]*>)'
 			. '|(?:<' . 'textarea(\s[^>]*)?>.*?</textarea>)'
 			. ')\s*)+#si'
 		);
@@ -198,7 +199,7 @@ class NNProtect
 	 */
 	public static function protectHtmlTags(&$string)
 	{
-		self::protectByRegex($string, '#<[a-z][^>]*(="[^"]*")+[^>]*>#si');
+		self::protectByRegex($string, '#<[a-z][^>]*(="[^"]*"|=\'[^\']*\')+[^>]*>#si');
 	}
 
 	/**
@@ -210,6 +211,7 @@ class NNProtect
 		{
 			return;
 		}
+
 		$matches = array_unique($matches['0']);
 
 		foreach ($matches as $match)

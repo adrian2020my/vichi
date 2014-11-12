@@ -6,7 +6,7 @@
     <authorUrl>http://virtuemart.net</authorUrl>
     <copyright>Copyright (C) 2013 iStraxx UG (haftungsbeschränkt). All rights reserved</copyright>
     <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
-    <version>2.6.12</version>
+    <version>2.6.12.2</version>
     <description>On demand tax calculation for whole U.S.A.</description>
     <files>
         <filename plugin="avalara">avalara.php</filename>
