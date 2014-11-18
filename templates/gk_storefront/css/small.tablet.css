@@ -8,6 +8,19 @@
 # Support: support@gavick.com 
 */
 
+div.shoes {
+    height: 0;
+    margin: 0;
+    display: none;
+    padding: 0;
+}
+
+div.mainfeatured2 img, div.mainfeatured1 img {
+padding: 0px;
+width:100%;
+height:auto;
+} 
+
 .gkPage {
 	padding: 0 20px;
 }
@@ -160,6 +173,21 @@ div.PricesalesPrice {
 .hikashop_subcategories > div[style="clear:both"],
 .hikashop_products > div[style="clear:both"] {
 	display: none;
+}
+@media only screen and (max-width: 801px){
+	#gkSearch {
+    background: none repeat scroll 0% 0% #1B1D1F;
+    display: none;
+    height: 63px;
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 47px;
+    transition: all 0.3s ease-out 0s;
+    width: 100%;
+    z-index: 10001;
+}
+	
 }
 
 /* Cookie consent plugin */

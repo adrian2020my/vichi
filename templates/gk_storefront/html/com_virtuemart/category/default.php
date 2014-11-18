@@ -51,7 +51,13 @@ if ( VmConfig::get('showCategory',1) and empty($this->keyword)) {
 		$verticalseparator = " vertical-separator";
 	?>
 	<div class="category-view">
+	
 		<?php // Start the Output
+		$modules = JModuleHelper::getModules('banner_catview');        
+        foreach($modules as $mod)
+        {
+        	echo JModuleHelper::renderModule($mod);
+        }
 		if(!empty($this->category->children)) {
 		foreach ( $this->category->children as $category ) { ?>
 		<?php if ($iCol == 1 && $iCategory > $categories_per_row) : ?>
@@ -106,7 +112,21 @@ if ( VmConfig::get('showCategory',1) and empty($this->keyword)) {
 ?>
 
 <div class="browse-view">
+
 <?php
+/**		 $modules = JModuleHelper::getModules('custom_position');        
+        foreach($modules as $mod)
+        {
+        	echo JModuleHelper::renderModule($mod);
+        } **/
+    ?>
+<?php
+ 		$modules = JModuleHelper::getModules('banner1');        
+        foreach($modules as $mod)
+        {
+        	echo JModuleHelper::renderModule($mod);
+        }
+
 	// Show child categories
 	if (!empty($this->products)) {
 		if (!empty($this->keyword)) {
@@ -195,23 +215,46 @@ foreach ( $this->products as $product ) {
 					<h3 class="catProductTitle"><?php echo JHTML::link($product->link, $product->product_name); ?></h3>
 					
 					<div class="catProductPrice" id="productPrice<?php echo $product->virtuemart_product_id ?>">
+					  <!--      <?php
+                      if ($this->show_prices == '1') {
+                         if( $product->prices['discountedPriceWithoutTax'] ):
+                            echo '<span style="text-decoration: line-through;">' . $this->currency->createPriceDiv('basePriceWithTax', '', $product->prices) . '</span>'
+                            . 'RM ' . round( (int)$product->prices['discountedPriceWithoutTax'], 2 );
+                         else:
+                            if ($product->prices['salesPrice']<=0 and VmConfig::get ('askprice', 1) and  !$product->images[0]->file_is_downloadable) {
+                               echo JText::_ ('COM_VIRTUEMART_PRODUCT_ASKPRICE');
+                            }
+                            echo $this->currency->createPriceDiv('basePriceWithTax', '', $product->prices);
+                            echo $this->currency->createPriceDiv('taxAmount','TPL_GK_LANG_VM_INC_TAX', $product->prices);
+                         endif;
+                      } ?> -->
+
 						<?php
 						if ($this->show_prices == '1') {
 							if ($product->prices['salesPrice']<=0 and VmConfig::get ('askprice', 1) and  !$product->images[0]->file_is_downloadable) {
 								echo JText::_ ('COM_VIRTUEMART_PRODUCT_ASKPRICE');
-							}
+							} else if ($product->product_override_price > 0 && $product->product_discount_id != 0){
+            	
+            			echo 'Sales Price : '. '<span style="text-decoration: line-through;">' . 'RM ' . number_format($product->product_price, 2 , '.','')  . '</span>'
+                        . '<span>' .'  RM ' . number_format($product->product_override_price, 2, '.' , '' ) . '</span>';
+                      
+                  } else {
 							echo $this->currency->createPriceDiv ('salesPrice', 'COM_VIRTUEMART_PRODUCT_SALESPRICE', $product->prices);
-						} ?>
+						}
+						} ?> 
 					</div>
 					
 					<?php if ( VmConfig::get ('display_stock', 1)) : ?>
 					<div class="stockLavel"> <span class="vmicon vm2-<?php echo $product->stock->stock_level ?>" title="<?php echo $product->stock->stock_tip ?>"></span> <span class="stock-level"><?php echo JText::_('COM_VIRTUEMART_STOCK_LEVEL_DISPLAY_TITLE_TIP') ?></span> </div>
 					<?php endif; ?>
 				</div>
-				
-				<a href="<?php echo $product->link; ?>" class="readon"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_DETAILS'); ?></a>
+
+				<a href="<?php echo $product->link; ?>" class="readon"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_DETAILS'); ?></a> 
+			
 			</div>
 		</div>
+		
+		
 	<?php
 	$iBrowseProduct ++;
 

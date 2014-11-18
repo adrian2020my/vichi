@@ -107,8 +107,17 @@ class NSP_GK5_com_virtuemart_View extends NSP_GK5_View {
 	static function info($config, $item, $num = 1) {
 		// %AUTHOR %DATE %HITS %CATEGORY
 		$news_info = '';
+	 	$user = JFactory::getUser();
+		$status = $user->guest;
+		
+		if ($status == 1 && $num == 1){
+			
+			$news_info = '<a class="loginViewPricin bold gklogin" href="index.php/login" rel="nofollow">Login to View Price</a>';
+			
+		} else {
+		
 		//
-		if($num == 1){
+		if($num == 1 && $status == 0){
 			if($config['news_content_info_pos'] != 'disabled') {
 				$class = 'nspInfo1 t'.$config['news_content_info_pos'].' f'.$config['news_content_info_float'];	
 			}
@@ -119,8 +128,8 @@ class NSP_GK5_com_virtuemart_View extends NSP_GK5_View {
 		}
 		//
 		if(
-			($config['news_content_info_pos'] != 'disabled' && $num == 1) || 
-			($config['news_content_info2_pos'] != 'disabled' && $num == 2)
+			($config['news_content_info_pos'] != 'disabled' && $num == 1 ) || 
+			($config['news_content_info2_pos'] != 'disabled' && $num == 2 )
 		) {
 			$news_info = '<div class="nspInfo '.$class.'"> '.$config['info'.(($num == 2) ? '2' : '').'_format'].' </div>';
 	        $info_category = ($config['category_link'] == 1) ? '<a href="'.static::categoryLink($item).'" target="'.$config['open_links_window'].'">'.$item['cat_name'].'</a>' : $news_catname;
@@ -143,6 +152,7 @@ class NSP_GK5_com_virtuemart_View extends NSP_GK5_View {
             $news_info = str_replace('%STORE', static::store($config, $item), $news_info);
 	    } else {
 	    	return '';
+	    }
 	    }
 		//
 		return $news_info;		
@@ -206,15 +216,49 @@ class NSP_GK5_com_virtuemart_View extends NSP_GK5_View {
         }
         $news_price = '<div>';
         //
-        if($config['vm_show_price_type'] != 'none') {
+
+		$user = JFactory::getUser();
+		$status = $user->guest;
+		if ($status == 1){
+					
+			echo '<a class="loginViewPricing bold gklogin" href="index.php/login" rel="nofollow">Login to View Price</a>';
+		} 
+		
+			
+      /*  if($config['vm_show_price_type'] != 'none' && $status == 0) {
             if($config['vm_display_type'] == 'text_price') {
             	$news_price .=  '<span>'.JText::_('MOD_NEWS_PRO_GK5_PRODUCT_PRICE').' '.$price.'</span>';
             } else {
             	$news_price .= '<span>'.$price.'</span>';
             }
-        } 
+        } */
+        
+        if($config['vm_show_price_type'] != 'none' && $status == 0) {
+            if($config['vm_display_type'] == 'text_price') {
+            	$news_price .=  '<span>'.JText::_('MOD_NEWS_PRO_GK5_PRODUCT_PRICE').' '.$price.'</span>';
+            } else if ($product->product_override_price > 0 && $product->product_discount_id != 0){
+            	
+            	$news_price .= '<span style="text-decoration: line-through;">' . 'RM ' . number_format($product->product_price, 2 , '.','')  . '</span>'
+                        . '<span>' .'  RM ' . number_format($product->product_override_price, 2, '.' , '' ) . '</span>';
+                      
+                  } else {      	
+            	$news_price .= '<span>'.$price.'</span>';
+            }
+        }
+       //<!--start-->
+     /*   if( $product->prices['discountedPriceWithoutTax'] ){
+                    $news_price .= '<span style="text-decoration: line-through;">' . $currency->createPriceDiv('basePriceWithTax', '', $product->prices) . '</span>'
+                        . 'RM ' . round( (int)$product->prices['discountedPriceWithoutTax'], 2 );
+                        
+                  } ; else if ($product->prices['salesPrice']<=0 and VmConfig::get ('askprice', 1) and  !$product->images[0]->file_is_downloadable) {
+                           $news_price .= JText::_ ('COM_VIRTUEMART_PRODUCT_ASKPRICE');
+                        }
+                        echo $currency->createPriceDiv('basePriceWithTax', '', $product->prices);
+                        echo $currency->createPriceDiv('taxAmount','TPL_GK_LANG_VM_INC_TAX', $product->prices);
+                     } */
+        //<-- end -->
         // 'Add to cart' button
-        if($config['vm_add_to_cart'] == 1) {
+        if($config['vm_add_to_cart'] == 1 && $status == 0) {
             $code = '<form method="post" class="product" action="index.php">';
             $code .= '<div class="addtocart-bar">';
             $code .= '<span class="quantity-box" style="display: none"><input type="text" class="quantity-input" name="quantity[]" value="1" /></span>';

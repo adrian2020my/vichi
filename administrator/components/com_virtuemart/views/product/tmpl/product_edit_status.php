@@ -26,7 +26,7 @@ defined('_JEXEC') or die('Restricted access'); ?>
 		<?php echo JText::_('COM_VIRTUEMART_PRODUCT_FORM_IN_STOCK') ?>
 		</th>
 		<td width="20%">
-			<input  type="text" class="inputbox js-change-stock"  name="product_in_stock" value="<?php echo $this->product->product_in_stock; ?>" size="10" />
+			<input  type="text" class="inputbox js-change-stock"  name="product_in_stock" value="<?php echo $this->product->product_in_stock; ?>" size="20" />
 
 			<?php 
 			/*if (isset($this->waitinglist) && count($this->waitinglist) > 0) { 

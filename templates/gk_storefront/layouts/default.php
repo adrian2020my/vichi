@@ -53,6 +53,7 @@ $tpl_page_suffix = $page_suffix_output != '' ? ' class="'.$page_suffix_output.'"
     <?php $this->layout->loadBlock('head'); ?>
 	<?php $this->layout->loadBlock('cookielaw'); ?>
 	
+	
 </head>
 <body<?php echo $tpl_page_suffix; ?><?php if($this->browser->get("tablet") == true) echo ' data-tablet="true"'; ?><?php if($this->browser->get("mobile") == true) echo ' data-mobile="true"'; ?><?php $this->layout->generateLayoutWidths(); ?> data-zoom-size="<?php echo $this->API->get('gk_zoom_size', '150'); ?>">	
 	<?php
@@ -83,7 +84,7 @@ $tpl_page_suffix = $page_suffix_output != '' ? ' class="'.$page_suffix_output.'"
 				<?php $this->layout->loadBlock('tools/cart'); ?>
 				<?php endif; ?>
 				<?php if($this->API->modules('search')) : ?>
-                <i class="gk-icon-search nodesktop" id="gkSearchBtn"></i>
+                <i class="gk-icon-search " id="gkSearchBtn"></i>
                 <?php endif; ?>
                
 			</div>

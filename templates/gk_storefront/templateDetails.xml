@@ -120,6 +120,9 @@
                     
                     <!--CUSTOMISED Module Positions -->
                     <position>searchbox</position>
+                    <position>usermenu</position>
+                    <position>banner1</position>
+                    <position>banner_catview</position>
           </positions>
           <languages folder="language">
                     <language tag="en-GB">en-GB.tpl_gk_storefront.ini</language>

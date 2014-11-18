@@ -4,6 +4,7 @@
 
 // No direct access.
 defined('_JEXEC') or die;
+JHTML::_( 'behavior.modal' ); 
 
 $this->addTemplateFavicon();
 // check the color version

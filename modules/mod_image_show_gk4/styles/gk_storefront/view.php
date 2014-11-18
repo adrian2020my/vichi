@@ -18,6 +18,8 @@ jimport('joomla.utilities.string');
 if($this->config['random_slides'] == 1) {
 	shuffle($this->config['image_show_data']);
 }
+//creating counter to know how many slides there are
+$counter = 0;
 ?>
 
 <div id="gkIs-<?php echo $this->config['module_id'];?>" class="gkIsWrapper-gk_storefront">
@@ -26,6 +28,7 @@ if($this->config['random_slides'] == 1) {
 	<?php for($i = 0; $i < count($this->config['image_show_data']); $i++) : ?>
 	<?php if($this->config['image_show_data'][$i]->published) : ?>
 		<?php 
+			
 			
 			unset($path, $title, $link, $content);
 			// creating slide path
@@ -58,16 +61,19 @@ if($this->config['random_slides'] == 1) {
 				// creating slide link
 				$link = ($this->config['image_show_data'][$i]->type == "text") ? $this->config['image_show_data'][$i]->url : $this->articles[$this->config['image_show_data'][$i]->art_id]["link"];	
 			}
+			
 		?>
 		<figure data-url="<?php echo $path; ?>" data-link="<?php echo $link; ?>" data-zindex="<?php echo $i+1; ?>" data-title="<?php echo $title; ?>">
 			<figcaption>
 				<?php if($this->config['config']->gk_storefront->gk_storefront_show_title_block && $title != '') : ?>	
-				<h2><?php echo $title; ?></h2>
+				<h2 id="gk-<?php echo $this->config['module_id'] . $counter ?>"><?php echo $title; ?></h2>
 				<?php echo $content; ?>
 				<?php endif; ?>
 			</figcaption>
 		</figure>
+		
 	<?php endif; ?>
+	<?php $counter++; ?>
 	<?php endfor; ?>
 
 	<?php if($this->config['config']->gk_storefront->gk_storefront_show_pagination): ?>	

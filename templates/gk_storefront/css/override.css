@@ -11,18 +11,239 @@
 /* Here you can include your override CSS styles */
 /* NOt yet finalised*/
 
+.box .header {
+font-family: "Times";
+font-size: 26px;	
+}
 
+span.quantity-controls input:focus, span.quantity-controls input:hover, span.quantity-controls input:active {
+
+/*background: url(../images/vmgeneral/quantity-controls.png) repeat-x !important;*/
+margin-bottom: 2px;
+
+}
+.ask-a-question a {
+padding: 7px 12px;
+}
+
+label.quantity_box {
+    float: left;
+}
+
+div.product-field-type-V {
+margin: 0 0 10px;
+width: 50%;
+float: left;
+}
+
+span.addtocart-button {
+    margin: 17px 61px 15px;
+}
+
+.addtocart-area .product-fields select {
+    width: auto;
+    position: relative;
+    top: -10px;
+    left: 103px;
+}
+
+
+.orderlistcontainer div.activeOrder {
+   
+    line-height: 30px;
+    margin: 8px 24px 0px 8px;
+}
+
+.display-number select {
+    margin: 10px 0px 8px 12px;
+}
+
+.orderlistcontainer div.title {
+    line-height: 52px;
+    width: auto;
+}
+
+.orderlistcontainer {
+    display: block;
+}
+
+.orderby-displaynumber {
+    margin: 10px 0px;
+    padding: 3px 0px;
+}
+
+div.shoes {
+height: 251px;	
+margin: 0px 0px 16px;
+	
+}
+
+span.addtocart-button input.addtocart-button, span.addtocart-button input.notify-button {
+    
+    padding: 0px 5px;
+}
+.box .addtocart-button {
+    background: none repeat scroll 0% 0% #EEE !important;
+    color: #1B1D1F !important;
+    float: none;
+    height: 38px;
+    margin: 18px 63px;
+    min-width: inherit !important;
+}
+
+
+/*for the h4 header of the tabs products in Main body component*/
+.gkMenu .nspArt h4.nspHeader {
+    font-size: 12px !important;
+}
+
+.nspArt h4.nspHeader {
+    font-size: 17px !important;
+    margin: 0px !important;
+    padding: 11px 8px 14px !important;
+}
+
+
+a.gkResponsive {
+margin: 1px !important;	
+}
+
+.gkTabsWrap.vertical ol li.active, .gkTabsWrap.horizontal ol li.active {
+    color: #000;
+}
+
+
+/*CSS for maintop_bottom*/
+div.maintopupper {
+display:flex;
+float:left;
+width: 100%;
+justify-content:center;
+}
+
+div.mainfeatured1, div.mainfeatured2 {
+padding: 0px;
+width: 100%;
+max-width:100%;
+}
+
+div.maintopupper img {
+border: 0px none; 
+margin-left: auto; 
+margin-right: auto; 
+padding: 0px 19%;
+}
+
+/*Customise font style of header in tab group*/
+.box.bigtitle .header {
+	font-family: "Times";
+	letter-spacing: 3px;
+}
+.box.parallax .header {
+	font-family: "Times";
+	letter-spacing: 3px;
+}
+
+/*override the title in the slides*/
+.gkIsWrapper-gk_storefront figcaption h2#gk-gk-is-980 {
+color: rgb( 214, 175, 82 );
+font-size: 20px;
+font-family: "Times";
+font-weight: bold;
+line-height: 20px;
+letter-spacing: 5px;
+}
+
+.gkIsWrapper-gk_storefront figcaption h2:before, .gkIsWrapper-gk_storefront figcaption h2#gk-gk-is-980:after,  .gkIsWrapper-gk_storefront figcaption h2:before, .gkIsWrapper-gk_storefront figcaption h2#gk-gk-is-980:before {
+border-top: 1px solid rgb( 214, 175, 82 );
+}
+
+.gkIsWrapper-gk_storefront figcaption p#shopNow {
+    color: rgb( 214, 175, 82 );
+    font-size: 21px;
+    font-style: normal;
+    font-weight:bold;
+	font-family: "Times";
+	letter-spacing:5px;
+}
+.gkIsWrapper-gk_storefront figcaption p#shopNow:after {
+border-top: 2px solid rgb( 214, 175, 82 );
+}
+
+/*override the header image wording*/
+
+div.fab-border {
+	box-sizing: border-box;
+    border-width: 1px;
+  	border-color: rgb( 255, 255, 255 );
+  	border-style: solid;
+  	background-color: rgba(255, 255, 255, 0.66);
+  	/*opacity: 0.502;*/
+	display: inline-block;
+	padding: 10px;
+	position: relative;
+	top: -30px;
+	transform: scale(0.9);
+    transition: transform 0.35s ease-out 0.35s, opacity 0.35s ease-out 0.35s, border 0.5s linear 0.65s;
+    width: auto;
+	z-index: 3;
+}
+.gkIsWrapper-gk_storefront .activated figcaption h3.fabh3 {
+    border: none;
+	/*border: 2px solid #FFF;*/
+    transform: scale(1);	
+}
+
+.gkIsWrapper-gk_storefront figcaption h3.fabh3 {
+	color: rgb( 214, 175, 82 );
+   	display: inline-block;
+   	font-size: 50px;
+	font-family: "Times";
+   	font-weight: bold;
+    line-height: 90px;
+	opacity: 1;
+    position: relative;
+    text-transform: uppercase;
+    top: -30px;
+    transform: scale(0.9);
+    transition: transform 0.35s ease-out 0.35s, opacity 0.35s ease-out 0.35s, border 0.5s linear 0.65s;
+	z-index: 4;
+	letter-spacing:8px;
+}
+
+.main-image img {
+    max-width: 100%;
+    max-height: 600px;
+}
+
+.productDetails .main-image img, #product-tabs-content > div.active {
+    display: block !important;
+    margin-left: auto;
+}
+
+/*get rid of search icon button when in desktop*/
+#gkSearchBtn {
+	display: none !important;
+}
 
 
 /*Tabs under Featured Section*/
-div#gk-tabs-103 ol.gkTabsNav span {
+/*div#gk-tabs-103 ol.gkTabsNav span {
 padding-top:10px;	
+}*/
+div#gk-tabs-103 ol.gkTabsNav span {
+    padding-top: 10px;
+    font-family: "Times";
+    font-size: 19px;
+    font-weight: bold;	
+}
+.gkTabsWrap.vertical ol li.active, .gkTabsWrap.horizontal ol li.active {
+    color:#cca223 !important;
 }
 
+
 .gkTabsWrap.vertical ol, .gkTabsWrap.horizontal > ol {
-min-height: 40px;
-margin: 0!important;
-padding: 0!important;
+
 height: 65px;
 }
 
@@ -126,7 +347,21 @@ transition-timing-function: ease-out;
 transition-delay: initial;
 }
 
-.gkMenu a:hover, .gkMenu a:active, .gkMenu a:focus, .gkMenu li.active > a {
+/*.gkMenu a:hover, .gkMenu a:active, .gkMenu a:focus, .gkMenu li.active > a {
+color: #cba133;
+border-style: solid hidden;
+border-width: 2px;
+padding:15px;
+border-color:#cba133;
+} */
+
+.gkmenu .level1 a:hover, .gkmenu .level1 a:active, .gkmenu .level1 a:focus {
+border-style:hidden;
+color: #000;
+font-weight: bold;
+}
+
+.gkmenuHover a:hover, .gkmenuHover a:active, .gkmenuHover a:focus {
 color: #cba133;
 border-style: solid hidden;
 border-width: 2px;
@@ -134,13 +369,28 @@ padding:15px;
 border-color:#cba133;
 }
 
+.gkmenu .level1 a:hover, .gkmenu .level1 a:active, .gkmenu .level1 a:focus {
+border-style:hidden;
+color: #000;
+font-weight: bold;
+}
+
 .gkMenu > ul > li > a {
 color: #000000;
 display: block;
 height: 0;
 line-height: 0;
-padding: 0 15px;
+padding: 15px 15px;
 position: relative;
+}
+.gkMenu > ul > li.haschild > a:after {
+color: #6d6e6e;
+content: "\f0d7";
+font-family: FontAwesome;
+font-size: 11px;
+position: absolute;
+right: 2px;
+top: 15px;
 }
 
 .gkMenu > ul > li.active > a {
@@ -200,6 +450,10 @@ text-transform: uppercase;
 transition: all .3s ease-out;
 }
 
+div.search input[type="text"] {
+	padding: 10px 12px !important;
+}
+
 select, textarea, input[type="text"], input[type="password"], input[type="url"], input[type="email"] {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -212,7 +466,8 @@ border-style: solid;
 border-width: 1px;
 color: #777;
 font-family: Arial, sans-serif;
-padding: 10px 12px !important;
+/*padding: 10px 12px !important;*/
+padding: 0 !important;
 max-width: 100%!important;
 float: left;
 
@@ -220,3 +475,7 @@ float: left;
 .nodesktop{
 	display:none !important;	
 }
+
+/*html, button, input, select, textarea {
+font-family: "Times";
+}*/

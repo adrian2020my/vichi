@@ -1349,7 +1349,7 @@ label.quantity_box {
 .quantity-controls input[type="button"]:active,
 .quantity-controls input[type="button"]:focus,
 .quantity-controls input[type="button"]:hover {
-	background: transparent!important;
+	/*background: transparent!important;*/
 }
 select#virtuemart_currency_id {
 	margin: 0 0 12px;

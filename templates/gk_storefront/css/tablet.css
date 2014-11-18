@@ -7,6 +7,21 @@
 # Website: http://www.gavick.com
 # Support: support@gavick.com 
 */
+span.addtocart-button {
+    margin: 0px 37px 15px;
+}
+
+
+div.mainfeatured1, div.mainfeatured2 {
+    padding: 0px 49px 0px 9px;
+    margin: 0 -31px 0 8px;
+}
+div.mainfeatured2 img, div.mainfeatured1 img {
+padding: 0px;
+width:100%;
+height:auto;
+} 
+
 /*Fix for tab bar under Featured */
 .gkTabsWrap.vertical ol, .gkTabsWrap.horizontal > ol {
     min-height: 40px;
@@ -167,21 +182,63 @@ h3 {
 	max-width: 720px!important;
 	left: 10px!important;
 }
+#gkSearchBtn {
+	display: none !important;
+}
 
 /* menu */
-#gkMobileMenu {
-	float: right;
-	margin: 24px 0 0 0;
-	position: relative;
+
+@media only screen and (max-width: 889px) {
+#gkTopSearch {
+    display:none !important;
 }
+#gkMainMenu {
+    display:none !important;
+}
+#gkMobileMenu {
+    float: right;
+	color: #111;
+	display: block!important; 
+	font-size: 32px;
+	height: 44px;
+	line-height: 44px;
+	margin: 10px 0 9px 0!important;
+	position: relative;
+	text-align: center;
+	width: 44px;
+}
+#gkSearchBtn {
+	display:block !important;
+    color: #1B1D1F;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    height: 38px;
+    line-height: 44px;
+    overflow: hidden;
+    text-align: center;
+    width: 30px;
+    top: 14px;
+    margin-top: 9px;
+}
+}
+
 .gkMenuOverlay + #gkMobileMenu {
 	display: none!important;
 }
 #gkExtraMenu {
-	display: none!important;
+/*	display: none!important; */
+display: block;
+margin: 0px;
+position: relative;
+text-align: center;
 }
+
 #gkMainMenu {
-	display: none;
+	/*	display: block; */
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
 }
 #gkMainMenu.gkMenuOverlay,
 #gkMainMenu.gkMenuOverlay #gkExtraMenu {
@@ -200,15 +257,18 @@ h3 {
 }
 
 #gkMobileMenu {
+/*	float: right;
 	color: #111;
-	display: block!important;
+	display: block!important; 
+	display:none;
 	font-size: 32px;
 	height: 44px;
 	line-height: 44px;
 	margin: 10px 0 9px 0!important;
 	position: relative;
 	text-align: center;
-	width: 44px;
+	width: 44px; */
+	display:none;
 }
 
 #gkMobileMenu i {
@@ -220,6 +280,7 @@ h3 {
     text-align: center;
     width: 44px;
     top: 55px;
+	
 }
 
 

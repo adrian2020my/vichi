@@ -54,7 +54,7 @@ input[type="button"]:hover,
 #gkMainbody .readmore > a:hover,
 .button.invert,
 .gkShowCart a:hover {
-	background: #e81f00;
+	background: #e81f00; /*take note of the problem*/
 	border-color: #e81f00;
 }
 article header.itemHasImage h1 a:active,

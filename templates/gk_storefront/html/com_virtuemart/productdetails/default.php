@@ -235,7 +235,21 @@ $document->addScriptDeclaration ($imageJS);
 								<?php endif; ?>
 						
 						<div class="spacer-buy-area">
+						<?php
+						$user = JFactory::getUser();
+						$status = $user->guest;
+						if ($status == 1){
+					
+							echo '<a class="loginViewPricing bold gklogin" href="index.php/login" rel="nofollow">Login to View Price</a>';
+						} 
+			?>
 								<?php
+				if ($this->product->product_override_price > 0 && $this->product->product_discount_id != 0 && $status == 0){
+            	
+            	echo  '<span>Original Price:</span> ' . '<span style="text-decoration: line-through;">' . 'RM ' . number_format($this->product->product_price, 2 , '.','')  . '</span>';
+                      
+                  }
+								
 				if (is_array($this->productDisplayShipments)) {
 					foreach ($this->productDisplayShipments as $productDisplayShipment) {
 					echo $productDisplayShipment . '<br />';
@@ -249,15 +263,20 @@ $document->addScriptDeclaration ($imageJS);
 				
 				// Product Price
 				if ($this->show_prices) { ?>
+				
+                  
+				
 				<div class="product-price" id="productPrice<?php echo $this->product->virtuemart_product_id ?>">
 									
 			<?php
 			if (!empty($this->product->prices['salesPrice'])) {
 				
 			}
+			
 			echo $this->currency->createPriceDiv ( 'salesPrice', 'COM_VIRTUEMART_PRODUCT_SALESPRICE', $this->product->prices ); 	
 			//vmdebug('view productdetails layout default show prices, prices',$this->product);
 			if ($this->product->prices['salesPrice']<=0 and VmConfig::get ('askprice', 1) and isset($this->product->images[0]) and !$this->product->images[0]->file_is_downloadable) { ?>
+				
 				<a class="ask-a-question bold" href="<?php echo $this->askquestion_url ?>" rel="nofollow" ><?php echo JText::_ ('COM_VIRTUEMART_PRODUCT_ASKPRICE') ?></a>
 				<?php
 			} else {
@@ -292,13 +311,15 @@ $document->addScriptDeclaration ($imageJS);
 				} // Product Custom ontop end
 					
 				
-			}
+			} 
 			?>
+			
 			
 			<?php 
 				// Ask a question about this product
 				if (VmConfig::get('ask_question', 0) == 1) :
 			?>
+			
 			<div class="ask-a-question">
 			    <a href="<?php echo $this->askquestion_url ?>" class="ask-a-question"><?php echo JText::_('COM_VIRTUEMART_PRODUCT_ENQUIRY_LBL') ?></a>
 			</div>
@@ -343,7 +364,12 @@ $document->addScriptDeclaration ($imageJS);
 													<?php echo JText::_('COM_VIRTUEMART_STOCK_LEVEL_DISPLAY_TITLE_TIP'); ?>:
 												</dt>
 												<dd>
-													<?php echo $this->product->product_in_stock; ?>
+													<?php if ($this->product->product_in_stock >= 1) { 
+													 echo JText::_('COM_VIRTUEMART_PRODUCT_IN_STOCK');
+													 } else { 
+													 echo JText::_('COM_VIRTUEMART_CART_PRODUCT_OUT_OF_STOCK') ;
+													} ?>
+													<?php //echo $this->product->product_in_stock; ?>
 												</dd>
 												<?php endif; ?>
 												

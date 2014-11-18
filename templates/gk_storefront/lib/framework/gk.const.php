@@ -25,6 +25,8 @@ $GK_TEMPLATE_MODULE_STYLES = array(
 	'article_inset' => 'none',
 	'topnav' => 'none',
 	'searchbox'  => 'none',
+	'banner1'  => 'none',
+	'banner_catview' => 'none',
 	
 	'mainbody' => 'gk_style',
 	'mainbody_top' => 'gk_style',
